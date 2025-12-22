@@ -38,8 +38,6 @@ float Kd = 0.1;
 
 float roll_PID, pitch_PID; // Salida PID
 
-// ======================================
-
 void lecturaMPU()
 {
   // Lectura de giroscopo y acelerometro
@@ -71,7 +69,7 @@ void calcularPID() {
   roll_p  = Kp * roll_error;
   pitch_p = Kp * pitch_error;
 
-  // Integral (limitada)
+  // Integral
   if (roll_error > -3 && roll_error < 3)
     roll_i += Ki * roll_error;
 
